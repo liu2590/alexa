@@ -1,0 +1,196 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "new new",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "help me"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "Compliment",
+                    "slots": [],
+                    "samples": [
+                        "pick me up"
+                    ]
+                },
+                {
+                    "name": "insult",
+                    "slots": [
+                        {
+                            "name": "name",
+                            "type": "AMAZON.US_FIRST_NAME"
+                        }
+                    ],
+                    "samples": [
+                        "say some mean words about {name}",
+                        "can you insult {name} "
+                    ]
+                },
+                {
+                    "name": "test",
+                    "slots": [],
+                    "samples": [
+                        "test one",
+                        "test please",
+                        "test test test"
+                    ]
+                },
+                {
+                    "name": "count",
+                    "slots": [
+                        {
+                            "name": "num",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "{num}"
+                            ]
+                        },
+                        {
+                            "name": "word",
+                            "type": "AMAZON.Animal",
+                            "samples": [
+                                "{word}"
+                            ]
+                        },
+                        {
+                            "name": "address",
+                            "type": "AMAZON.US_CITY",
+                            "samples": [
+                                "{address}"
+                            ]
+                        },
+                        {
+                            "name": "thing",
+                            "type": "anything"
+                        }
+                    ],
+                    "samples": [
+                        "count to {num} {thing}",
+                        "count {num} {thing}",
+                        "count {num} {address}",
+                        "count to {num} {address}",
+                        "count {num} {word}",
+                        "count to {num} {word}",
+                        "count {num}",
+                        "count to {num}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "anything",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "lao hu"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "niao"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "yue"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "count",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "num",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.852856683053.477189794125"
+                            }
+                        },
+                        {
+                            "name": "word",
+                            "type": "AMAZON.Animal",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.852856683053.1292053619261"
+                            }
+                        },
+                        {
+                            "name": "address",
+                            "type": "AMAZON.US_CITY",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.852856683053.1442145535600"
+                            }
+                        },
+                        {
+                            "name": "thing",
+                            "type": "anything",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.852856683053.477189794125",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "How many to count?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "please say a number"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.852856683053.1292053619261",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "say an animal"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.852856683053.1442145535600",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "please say a city"
+                    }
+                ]
+            }
+        ]
+    }
+}
